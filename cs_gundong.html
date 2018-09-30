@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+	<title class="name"></title>
+	<link href="https://cdn.bootcss.com/Swiper/4.3.0/css/swiper.min.css" rel="stylesheet">
+	<style type="text/css">
+	/* html,body,div,img{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		font-size: 0;
+	}
+	p{
+		font-size:1rem;
+		line-height: 2rem;
+	} */
+	</style>
+
+	 <style>
+    html, body {
+      position: relative;
+      height: 100%;
+    }
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color:#000;
+      margin: 0;
+      padding: 0;
+    }
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+	<div class="swiper-container">
+		<div  class="swiper-wrapper">
+			<div class="swiper-slide" >
+				<img id="xiaochengxu2"  src="img/book.png" style="width:100%;height:100%" alt="">
+			</div>
+			<div class="swiper-slide" >
+				<img id="xiaochengxu1"   src="img/book.png" style="width:100%;height:100%" alt="">
+			</div>
+		</div>
+	</div>
+
+<script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/Swiper/4.3.0/js/swiper.min.js"></script>
+	<script type="text/javascript">
+</script>
+<!-- 
+http://new.cnzz.com/v1/login.php?siteid=1274791695
+-->
+<div style="display:none;">
+<script src="https://s22.cnzz.com/z_stat.php?id=1274791695&web_id=1274791695" language="JavaScript"></script>
+</div>
+<script>
+	$("#xiaochengxu1").attr("src","img/xiaochengxu1.jpg")
+	$("#xiaochengxu2").attr("src","img/xiaochengxu2.jpg")
+ var swiper = new Swiper('.swiper-container', {
+      direction: 'vertical',
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+</script>
+</body>
+</html>

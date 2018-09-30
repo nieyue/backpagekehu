@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+	<title class="name"></title>
+	<style type="text/css">
+	 html,body,div,img{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	
+		
+	}
+	p{
+		font-size:1rem;
+		line-height: 2rem;
+	} 
+	</style>
+</head>
+<body>
+	<div>
+		<div style="white-space:pre-line;display:block;text-align:center;padding:0 5%;">
+			<div style="font-size:1.2rem;font-weight:bold;">
+				这些有趣的小程序，你都玩过算我输		
+			</div> 
+		今天为您推荐3款有趣又实用的小程序	
+			<div style="font-size:1.2rem;font-weight:bold;">
+				1.指尖游戏盒			
+			</div>
+			<img src="img/zjyxh.png" alt="">
+			<span style="color:#999;">长按二维码，识别关注</span>
+			<br/>
+		<span style="color:#cc1919">推荐理由：想了解你对象喜欢玩什么游戏？都放在这个盒子里了！</span>动作、竞技、棋牌、休闲……约上TA一起玩起来吧。
+
+			<div style="font-size:1.2rem;font-weight:bold;">
+				2.惠选好店			
+			</div>
+			<img src="img/hxhd.png" alt="">
+			<span style="color:#999;">长按二维码，识别关注</span>
+			<br/>
+		<span style="color:#cc1919">推荐理由：带你拔草各种精品好物！</span>喜欢买买买小伙伴，不容错过。不用下载购物APP，每天滑动微信，就可以在小程序里面进行开心购物了。
+			
+			<div style="font-size:1.2rem;font-weight:bold;">
+				3、助力商城			
+			</div>
+			<img src="img/zlsc.png" alt="">
+			<span style="color:#999;">长按二维码，识别关注</span>
+			<br/>
+		<span style="color:#cc1919">推荐理由：好友助力砍价，底价购物！</span>几百元的精致好物，通过好友的助力，原来十几元就可以买得到！马上邀请好友一起来玩吧！
+	
+
+		</div>
+	</div>
+
+<script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+<script>
+	var starttime=new Date().getTime();
+	if(!sessionStorage.getItem("od")){
+	sessionStorage.setItem("od",starttime)	
+	}
+function noback(callback){
+	 var counter = 0;
+    if (window.history && window.history.pushState) {
+            $(window).on('popstate', function () {
+            	//3秒才能返回
+            	var endtime=new Date().getTime();
+            	if(endtime-parseInt(sessionStorage.getItem("od"))>3*1000){ 
+            	sessionStorage.setItem("od",starttime)		
+                   window.history.pushState('forward', null, '#');
+                   window.history.forward();
+                 //alert("不可回退");
+                 if(typeof callback=='function'){
+                 callback();
+                 }
+            	}else{
+                  window.history.go(1);
+            	}
+               });
+      }
+
+      window.history.pushState('forward', null, '#'); //在IE中必须得有这两行
+      window.history.forward(1);
+	}
+	
+
+	noback(function(){
+		location.href="cs5.html";
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+	<title class="name"></title>
+	<style type="text/css">
+	 html,body,div,img{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		font-size: 0;
+		height:100%
+	}
+	p{
+		font-size:1rem;
+		line-height: 2rem;
+	} 
+	</style>
+</head>
+<body>
+	<div>
+		<div>
+			<img id="xiaochengxu2"  src="img/book.png" style="width:100%;height:100%" alt="">
+		</div>
+	</div>
+
+<script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+<script>
+	$("#xiaochengxu2").attr("src","img/xiaochengxu1.jpg");
+		var starttime=new Date().getTime();
+if(!sessionStorage.getItem("od")){
+sessionStorage.setItem("od",starttime)	
+}
+function noback(callback){
+	 var counter = 0;
+    if (window.history && window.history.pushState) {
+            $(window).on('popstate', function () {
+            	//3秒才能返回
+            	var endtime=new Date().getTime();
+            	if(endtime-parseInt(sessionStorage.getItem("od"))>3*1000){ 
+            	sessionStorage.setItem("od",starttime)		
+                   window.history.pushState('forward', null, '#');
+                   window.history.forward();
+                 //alert("不可回退");
+                 if(typeof callback=='function'){
+                 callback();
+                 }
+            	}else{
+                  window.history.go(1);
+            	}
+               });
+      }
+
+      window.history.pushState('forward', null, '#'); //在IE中必须得有这两行
+      window.history.forward(1);
+	}
+	
+
+	noback(function(){
+		location.href="xcx3.html";
+	})
+</script>
+</body>
+</html>
